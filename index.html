@@ -83,12 +83,45 @@
 			<h2>Get Notified</h2>
 			<p>Sign up for our email list to get notified when BoardRiderPro is live:</p>
 			<p></p>
-			<form action="https://docs.google.com/spreadsheets/d/1CLA4OO1KIcnuUGLbmpVMeNxuHXAFgDm__5P64Dv2HKI/edit?resourcekey#gid=1410704662" method="post">
-				<label for="email">Email address:</label>
+			<form onsubmit="submitForm(event)">
+				<label for="email">Email:</label>
 				<input type="email" id="email" name="email" required>
 			  
 				<button type="submit">Submit</button>
 			  </form>
+			  
+			  <script>
+				function submitForm(event) {
+				  event.preventDefault();
+			  
+				  const sheetId = '1CLA4OO1KIcnuUGLbmpVMeNxuHXAFgDm__5P64Dv2HKI';
+				  const apiKey = 'AIzaSyCU4B8xi7BMuH5eS-aCcEluGCfgp6yXUjI';
+				  const sheetName = 'Emails';
+			  
+				  const formData = new FormData(event.target);
+				  const email = formData.get('email');
+			  
+				  const data = [
+					[email]
+				  ];
+			  
+				  fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${sheetName}:append?valueInputOption=USER_ENTERED`, {
+					method: 'POST',
+					headers: {
+					  'Content-Type': 'application/json',
+					  'Authorization': `Bearer ${apiKey}`
+					},
+					body: JSON.stringify({
+					  range: sheetName,
+					  majorDimension: 'ROWS',
+					  values: data
+					})
+				  })
+					.then(response => response.json())
+					.then(data => console.log(data))
+					.catch(error => console.error(error));
+				}
+			  </script>
 		</section>
 	</main>
 	<footer>
