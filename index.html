@@ -83,45 +83,7 @@
 			<h2>Get Notified</h2>
 			<p>Sign up for our email list to get notified when BoardRiderPro is live:</p>
 			<p></p>
-			<form onsubmit="submitForm(event)">
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" required>
-			  
-				<button type="submit">Submit</button>
-			  </form>
-			  
-			  <script>
-				function submitForm(event) {
-				  event.preventDefault();
-			  
-				  const sheetId = '1CLA4OO1KIcnuUGLbmpVMeNxuHXAFgDm__5P64Dv2HKI';
-				  const apiKey = 'AIzaSyCU4B8xi7BMuH5eS-aCcEluGCfgp6yXUjI';
-				  const sheetName = 'Emails';
-			  
-				  const formData = new FormData(event.target);
-				  const email = formData.get('email');
-			  
-				  const data = [
-					[email]
-				  ];
-			  
-				  fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${sheetName}:append?valueInputOption=USER_ENTERED`, {
-					method: 'POST',
-					headers: {
-					  'Content-Type': 'application/json',
-					  'Authorization': `Bearer ${apiKey}`
-					},
-					body: JSON.stringify({
-					  range: sheetName,
-					  majorDimension: 'ROWS',
-					  values: data
-					})
-				  })
-					.then(response => response.json())
-					.then(data => console.log(data))
-					.catch(error => console.error(error));
-				}
-			  </script>
+			<div data-tf-widget="NrrPTTuA" data-tf-opacity="100" data-tf-iframe-props="title=My typeform" data-tf-transitive-search-params data-tf-medium="snippet" style="width:%;height:500px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
 		</section>
 	</main>
 	<footer>
