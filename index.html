@@ -1,101 +1,15 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title>BoardRiderPro</title>
-	<style>
-		body {
-			background-color: #ffffff;
-			color: #333333;
-			font-family: Arial, sans-serif;
-		}
-		header {
-			background-color: #003366;
-			color: #ffffff;
-			padding: 20px;
-			text-align: center;
-		}
-		h1 {
-			margin: 0;
-		}
-		main {
-			max-width: 600px;
-			margin: 0 auto;
-			padding: 20px;
-			text-align: center;
-		}
-		section {
-			margin-bottom: 40px;
-			padding: 20px;
-			background-color: #f7f7f7;
-			border-radius: 10px;
-		}
-		label {
-			display: block;
-			font-size: 18px;
-			font-weight: bold;
-			margin-bottom: 10px;
-			text-align: left;
-		}
-		input[type="email"] {
-			display: block;
-			margin-bottom: 20px;
-			padding: 10px;
-			width: 100%;
-			font-size: 16px;
-			border-radius: 5px;
-			border: none;
-			box-shadow: 0 0 5px rgba(0,0,0,0.1);
-		}
-		input[type="submit"] {
-			background-color: #003366;
-			color: #ffffff;
-			border: none;
-			border-radius: 5px;
-			padding: 10px 20px;
-			font-size: 18px;
-			cursor: pointer;
-			transition: background-color 0.2s ease;
-		}
-		input[type="submit"]:hover {
-			background-color: #002147;
-		}
-		footer {
-			background-color: #003366;
-			color: #ffffff;
-			padding: 20px;
-			text-align: center;
-		}
-		img {
-			display: block;
-			margin: 0 auto;
-			max-width: 100%;
-		}
-	</style>
-</head>
-<body>
-	<header>
-		<h1>Welcome to BoardRiderPro!</h1>
-		<h2>Your AI Guide for buying your next surf or snowboard.</h2>
-	</header>
-	<main>
-		<section>
-			<img src="images/BRPlogo.png" alt="BoardRiderPro Logo">
-			
-		</section>
-		<section>
-			<script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
-			<div id="myLandbot" style="width: 100%; height: 500px"></div>
-			<script>
-			  var myLandbot = new Landbot.Container({
-				container: '#myLandbot',
-				configUrl: 'https://storage.googleapis.com/landbot.site/v3/H-1525990-A054BXHZKEWFHAQT/index.json',
-			  });
-			</script>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Landbot | Convert a Landing Page into a Chatbot</title>
+  </head>
+  <body>
+    <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+    <script>
+      var myLandbot = new Landbot.Fullpage({
+        configUrl: 'https://storage.googleapis.com/landbot.site/v3/H-1525990-A054BXHZKEWFHAQT/index.json',
+      });
     </script>
-		</section>
-	</main>
-	<footer>
-		<p>&copy; 2023 BoardRiderPro</p>
-	</footer>
-</body>
+  </body>
 </html>
